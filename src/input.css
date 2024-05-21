@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.text-stroke-custom {
+  -webkit-text-stroke: 1px white;
+}
