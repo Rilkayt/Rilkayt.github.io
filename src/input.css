@@ -9,3 +9,47 @@
 .text-stroke-custom {
   -webkit-text-stroke: 1px white;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.scroll {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #fff 20%,
+    #fff 80%,
+    transparent
+  );
+}
+
+.scroll div div {
+  animation: animate var(--t) linear infinite;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  white-space: nowrap;
+}
+
+.scroll div div img {
+  width: 10%;
+  white-space: nowrap;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
