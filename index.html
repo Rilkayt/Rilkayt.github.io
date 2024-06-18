@@ -22,74 +22,69 @@
     <link rel="stylesheet" href="./src/input.css" />
   </head>
   <body>
-    <header
-      class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10"
-    >
-      <div class="container">
-        <div class="flex items-center justify-between relative">
-          <div class="px-4">
-            <a href="#home" class="font-bold text-lg text-white block py-6">
-              RILKA_DEV
-            </a>
-          </div>
-          <div class="flex items-center px-4">
-            <button
-              id="hamburger"
-              name="hamburger"
-              type="button"
-              class="block absolute right-4 lg:hidden"
-            >
-              <span
-                class="hamburger-line transition duration-300 ease-in-out origin-top-left"
-              ></span
-              ><span
-                class="hamburger-line transition duration-300 ease-in-out"
-              ></span
-              ><span
-                class="hamburger-line transition duration-300 ease-in-out origin-top-left"
-              ></span>
-            </button>
+    <div
+      id="overlay-side"
+      class="w-screen h-screen bg-black opacity-35 fixed z-40 hidden"
+      onclick="tutup()"
+    ></div>
 
-            <nav
-              id="nav-menu"
-              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none"
+    <aside
+      id="menuBar"
+      class="fixed top-0 w-64 bg-[#F6F8F7] shadow-2xl h-screen -right-64 z-50"
+    >
+      <ul>
+        <li class="w-full flex justify-end p-4">
+          <button class="flex justify-end" onclick="tutup()">
+            <img
+              src="./Assets/cross-square-svgrepo-com.svg"
+              alt=""
+              class="w-5 h-5 grayscale"
+            />
+          </button>
+        </li>
+        <li class="pt-sans text-lg font-semibold px-3">
+          <a href="#beranda">Beranda</a>
+        </li>
+        <li class="pt-sans text-lg font-semibold px-3 pt-2">
+          <a href="#about">Tentang Saya</a>
+        </li>
+        <li class="pt-sans text-lg font-semibold px-3 pt-2">
+          <a href="#slider-framework">Framework & Tools</a>
+        </li>
+        <li class="pt-sans text-lg font-semibold px-3 pt-2">
+          <a href="#project">Proyek</a>
+        </li>
+        <li class="pt-sans text-lg font-semibold px-3 pt-2">
+          <a href="#bisnis">Usaha</a>
+        </li>
+        <li class="pt-sans text-lg font-semibold px-3 pt-2">
+          <a href="#footer">Kontak</a>
+        </li>
+      </ul>
+    </aside>
+
+    <nav id="navbar-web" class="w-full sticky top-0 z-10 bg-[#0F1015]">
+      <div class="container">
+        <div class="flex justify-between laptop:px-7 relative">
+          <div class="px-0 py-4 laptop:px-3 laptop:py-8">
+            <a
+              href="#beranda"
+              class="font-bold text-xl laptop:text-2xl text-white"
+              >RILKA_DEV</a
             >
-              <ul class="block lg:flex">
-                <li class="group">
-                  <a
-                    href="#home"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
-                    >Beranda</a
-                  >
-                </li>
-                <li class="group">
-                  <a
-                    href="#TentangSaya"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
-                    >Tentang Saya</a
-                  >
-                </li>
-                <li class="group">
-                  <a
-                    href="#home"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
-                    >Portofolio</a
-                  >
-                </li>
-                <li class="group">
-                  <a
-                    href="#home"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
-                    >Contact</a
-                  >
-                </li>
-              </ul>
-            </nav>
+          </div>
+          <div class="hamburger flex">
+            <button class="mr-3" onclick="action()">
+              <span class="w-[20px] h-[2px] bg-white block my-1"></span>
+              <span class="w-[20px] h-[2px] bg-white block my-1"></span>
+              <span class="w-[20px] h-[2px] bg-white block my-1"></span>
+            </button>
           </div>
         </div>
       </div>
-    </header>
-    <section id="hero" class="pt-28 bg-[#0F1015]">
+    </nav>
+
+    <section id="beranda" class="pt-16 bg-[#0F1015]">
       <div class="container">
         <div
           class="flex flex-wrap laptop:flex-row-reverse laptop:items-center m-auto"
@@ -98,15 +93,14 @@
             <h1
               class="roboto text-white font-bold tracking-wide tablet:text-xl"
             >
-              Hi Everyone 👋👋
+              Hai Semuanya 😉👋
             </h1>
             <h1
-              class="roboto text-white text-5xl tablet:text-6xl font-bold pt-2"
+              class="roboto text-white text-4xl tablet:text-6xl font-bold pt-2"
             >
-              I am
-              <span class="text-transparent text-stroke-custom">ILHAM</span>
-              <span class="block tablet:hidden"></span> & I like coding to
-              create websites
+              Perkenalkan Namaku
+              <span class="text-transparent text-stroke-custom">ILHAM</span> &
+              Saya seorang Web Developer
             </h1>
           </div>
           <div class="w-full laptop:w-1/2">
@@ -134,24 +128,29 @@
       </div>
     </section>
 
-    <section id="about" class="py-28 bg-[#0F1018]">
+    <section id="about" class="py-48 bg-[#0F1018]">
       <div class="container">
         <div class="text-center">
           <h1 class="roboto text-2xl font-bold text-white tracking-wide">
-            About
+            Tentang Saya
           </h1>
-          <div class="laptop:flex laptop:justify-center">
+          <div
+            class="laptop:flex laptop:justify-center pt-4 gap-10 text-justify"
+          >
             <p class="roboto pt-3 text-white laptop:w-1/2 laptop:text-xl">
-              My name is
-              <span class="text-[#3de1ec]">Rifki Ilham Lutfika</span>, I am a
-              graduate of the
-              <span class="text-[#ffad31]">Software Engineering</span>
-              department at
-              <span class="text-[#e5ff00]"
-                >Vocational High School 2 Singosari</span
-              >. I also have some experience in
-              <span class="text-[#2785ff]">creating websites</span> with several
-              frameworks such as Vue JS, Express JS, and others
+              Perkenalkan nama saya Rifki Ilham Lutfika dan saya merupakan
+              lulusan dari SMKN 2 Singosari dibidang Rekayasa Perangkat Lunak.
+              Saya mulai menyukai dunia it ini sejak dibangku SMK kelas 1 ,
+              serta dari awal saya sangat menyukai dunia it terkhusus pada
+              pembuatan website.
+            </p>
+            <p class="roboto pt-3 text-white laptop:w-1/2 laptop:text-xl">
+              Semasa saya sekolah SMK , saya sangat beruntung karena materi yang
+              paling banyak dibawakan oleh sekolah adalah pemograman web. Dari
+              sini saya akhirnya mengenal pemograman php, framework css seperti
+              Bootstrap , dan Tailwind CSS. Hingga akhirnya saya masuk ke dunia
+              industri dimasa saya PKL disebuah instansi bernama "SmartLink PT.
+              Ada Ide Langsung Jalan"
             </p>
           </div>
         </div>
@@ -415,22 +414,19 @@
       <div class="container">
         <div class="w-full">
           <h1 class="text-center roboto font-bold text-white text-2xl">
-            Projects
+            Proyek
           </h1>
           <p
             class="roboto text-white text-sm pt-4 text-center pb-5 laptop:text-base"
           >
-            These are some website projects that my friends and I have created,
-            however there are also some that are personal or individual
-            assignments
+            Berikut merupakan website - website yang pernah saya buat selama
+            saya belajar di bangku SMK hingga sekarang.
           </p>
         </div>
         <div class="w-full pt-14 tablet:w-10/12 tablet:mx-auto">
-          <div
-            class="grid grid-col-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-10 px-4"
-          >
+          <div class="grid grid-col-1 tablet:grid-cols-2 gap-10 px-4">
             <div
-              class="bg-slate-400 rounded-xl border-t-4 border-blue-600 mt-2 shadow-sm shadow-white"
+              class="bg-slate-400 rounded-xl border-t-4 border-blue-600 mt-2 shadow-sm shadow-white relative"
             >
               <div class="w-full mobile:h-40 tablet:h-52">
                 <img
@@ -443,22 +439,28 @@
               <h2
                 class="roboto font-semibold tracking-wide text-lg px-3 pt-6 pb-3"
               >
-                Library Website - LOCAPUS
+                Website Perpustakaan - LOCAPUS
               </h2>
               <p class="roboto text-sm px-3 pb-2">
-                This is a project that I worked on in the skills competency
-                exam, here I built it using Vue JS (Front-end), Express JS
-                (building an API), Prisma (DataBase Management or as an ORM
-                (Object Relation Mapping))
+                Salah satu proyek yang saya ambil disaat ujian kompetensi
+                keahlian, dan disini saya menggunakan beberapa kerangka kerja
+                atau framework terutama yaitu Vue JS dan Express JS
               </p>
               <a
-                href=""
+                href="https://github.com/Rilkayt/perpustakaan_UKK_frontend"
+                target="_blank"
                 class="mx-3 mt-3 mb-3 p-2 rounded-md text-center text-white bg-slate-800 flex justify-center hover:bg-slate-500 hover:duration-300 hover:text-black hover:font-semibold hover:opacity-75 duration-300"
-                >See Repository</a
+                >Lihat Repository - FE</a
+              >
+              <a
+                href="https://github.com/Rilkayt/perpustakaan_UKK_backend"
+                target="_blank"
+                class="mx-3 mt-3 mb-3 p-2 rounded-md text-center text-white bg-slate-800 flex justify-center hover:bg-slate-500 hover:duration-300 hover:text-black hover:font-semibold hover:opacity-75 duration-300"
+                >Lihat Repository - BE</a
               >
             </div>
             <div
-              class="bg-slate-400 rounded-xl border-t-4 border-blue-600 mt-2"
+              class="bg-slate-400 rounded-xl border-t-4 border-blue-600 mt-2 tablet:relative"
             >
               <div class="w-full mobile:h-40 tablet:h-52">
                 <img
@@ -473,16 +475,18 @@
                 Smartlink Scan
               </h2>
               <p class="roboto text-sm px-3 pb-2">
-                This is a project that my team and I worked on during my
-                internship, this is a scan for payment application launched by
-                SmartLink, and people can make laundry payments in LONDI with
-                this website
+                salah satu proyek dari kegiatan saya PKL di industri, serta di
+                proyek ini saya bertugas sebagai Front-end developer dengan
+                pemanfaatan beberapa framework yaitu Vue JS dan Bootstrap
               </p>
-              <a
-                href=""
-                class="mx-3 mt-3 mb-3 p-2 rounded-md text-center text-white bg-slate-800 flex justify-center hover:bg-slate-500 hover:duration-300 hover:text-black hover:font-semibold hover:opacity-75 duration-300"
-                >See Site</a
-              >
+              <div class="tablet:absolute tablet:bottom-0 tablet:w-full">
+                <a
+                  href="https://scan.smartlink.id/"
+                  target="_blank"
+                  class="mx-4 mt-3 mb-3 p-2 rounded-md text-center text-white bg-slate-800 flex justify-center hover:bg-slate-500 hover:duration-300 hover:text-black hover:font-semibold hover:opacity-75 duration-300"
+                  >Lihat Website</a
+                >
+              </div>
             </div>
             <div
               class="bg-slate-400 rounded-xl border-t-4 border-blue-600 mt-2"
@@ -500,17 +504,634 @@
                 Pressdasi
               </h2>
               <p class="roboto text-sm px-3 pb-2">
-                This is what my friends and I did together, where in this
-                application we can monitor the attendance of students in this
-                application, with 3 role divisions, namely Admin, Officer, Class
-                Teacher
+                Ini merupakan proyek tugas akhir yang kami kerjakan bersama oleh
+                satu kelas, dan pada proyek ini saya memiliki peran untuk
+                pengembangan website dengan berfokus pada pemanggilan API dan
+                pengelolahan data yang terpanggil
               </p>
               <a
-                href=""
+                href="https://github.com/se7uh/Tugas-Akhir-Frontend"
+                target="_blank"
                 class="mx-3 mt-3 mb-3 p-2 rounded-md text-center text-white bg-slate-800 flex justify-center hover:bg-slate-500 hover:duration-300 hover:text-black hover:font-semibold hover:opacity-75 duration-300"
-                >See Repository</a
+                >Lihat Repository - FE</a
+              >
+              <a
+                href="https://github.com/se7uh/Tugas-Akhir-Backend"
+                target="_blank"
+                class="mx-3 mt-3 mb-3 p-2 rounded-md text-center text-white bg-slate-800 flex justify-center hover:bg-slate-500 hover:duration-300 hover:text-black hover:font-semibold hover:opacity-75 duration-300"
+                >Lihat Repository - BE</a
               >
             </div>
+            <div
+              class="bg-slate-400 rounded-xl border-t-4 border-blue-600 mt-2 tablet:relative"
+            >
+              <div class="w-full mobile:h-40 tablet:h-52">
+                <img
+                  src="./Assets/Screenshot (369).png"
+                  alt="ukk-locapus"
+                  class="rounded-md w-full h-full"
+                />
+              </div>
+              <h2
+                class="roboto font-semibold tracking-wide text-lg px-3 pt-6 pb-3"
+              >
+                Web Toko Pojok Rejeki
+              </h2>
+              <p class="roboto text-sm px-3 pb-2">
+                Salah satu website yang saya buat untuk toko orang tua saya ,
+                dimana ini juga sebagai konten untuk pengembangan usaha yang
+                saya tekuni dibidang jasa pembuatan web. Dan karena saya lihat
+                toko orang tua saya belum ada website jadi saya buatin sebagai
+                melatih diri dengan apa yang sudah dipelajari
+              </p>
+              <div class="tablet:absolute tablet:bottom-0 tablet:w-full">
+                <a
+                  href="https://pojok-rejeki.vercel.app/"
+                  target="_blank"
+                  class="mx-3 mt-3 mb-3 p-2 rounded-md text-center text-white bg-slate-800 flex justify-center hover:bg-slate-500 hover:duration-300 hover:text-black hover:font-semibold hover:opacity-75 duration-300"
+                  >Lihat Website</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bisnis" class="py-28 bg-[#0F1015]">
+      <div class="container">
+        <div class="w-full">
+          <h1 class="text-center roboto font-bold text-white text-2xl">
+            Usaha
+          </h1>
+          <p
+            class="roboto text-white text-sm pt-4 text-center pb-5 laptop:text-base"
+          >
+            Pada akhir Mei 2024 kemarin , saya juga memiliki usaha sampingan
+            yang bernama diwebin.id untuk jasa pembuatan website , seperti
+            website portofolio, website perusahaan, maupun kustom website
+          </p>
+          <div class="laptop:flex laptop:gap-6 pt-4">
+            <div class="w-full h-full pb-3">
+              <img src="./Assets/Screenshot 2024-06-18 214429.png" alt="" />
+            </div>
+            <div class="w-full h-full pb-3">
+              <img src="./Assets/Screenshot 2024-06-18 214511.png" alt="" />
+            </div>
+            <div class="w-full h-full pb-3">
+              <img src="./Assets/Screenshot 2024-06-18 214536.png" alt="" />
+            </div>
+          </div>
+
+          <p
+            class="roboto text-white text-sm pt-4 text-center laptop:text-base py-20"
+          >
+            Dan berikut cuplikan dari konten yang saya buat dengan saya beri
+            edisi yaitu #kodinginBrand , dimana disini saya mencoba
+            menkondingkan brand - brand yang ada di supermarket ataupun yang
+            dijual
+          </p>
+          <div class="flex justify-center gap-10">
+            <blockquote
+              class="instagram-media"
+              data-instgrm-captioned
+              data-instgrm-permalink="https://www.instagram.com/reel/C78jxz1xzVr/?utm_source=ig_embed&amp;utm_campaign=loading"
+              data-instgrm-version="14"
+            >
+              <div style="padding: 16px">
+                <a
+                  href="https://www.instagram.com/reel/C78jxz1xzVr/?utm_source=ig_embed&amp;utm_campaign=loading"
+                  style="
+                    background: #ffffff;
+                    line-height: 0;
+                    padding: 0 0;
+                    text-align: center;
+                    text-decoration: none;
+                    width: 100%;
+                  "
+                  target="_blank"
+                >
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: row;
+                      align-items: center;
+                    "
+                  >
+                    <div
+                      style="
+                        background-color: #f4f4f4;
+                        border-radius: 50%;
+                        flex-grow: 0;
+                        height: 40px;
+                        margin-right: 14px;
+                        width: 40px;
+                      "
+                    ></div>
+                    <div
+                      style="
+                        display: flex;
+                        flex-direction: column;
+                        flex-grow: 1;
+                        justify-content: center;
+                      "
+                    >
+                      <div
+                        style="
+                          background-color: #f4f4f4;
+                          border-radius: 4px;
+                          flex-grow: 0;
+                          height: 14px;
+                          margin-bottom: 6px;
+                          width: 100px;
+                        "
+                      ></div>
+                      <div
+                        style="
+                          background-color: #f4f4f4;
+                          border-radius: 4px;
+                          flex-grow: 0;
+                          height: 14px;
+                          width: 60px;
+                        "
+                      ></div>
+                    </div>
+                  </div>
+                  <div style="padding: 19% 0"></div>
+                  <div
+                    style="
+                      display: block;
+                      height: 50px;
+                      margin: 0 auto 12px;
+                      width: 50px;
+                    "
+                  >
+                    <svg
+                      width="50px"
+                      height="50px"
+                      viewBox="0 0 60 60"
+                      version="1.1"
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                    >
+                      <g
+                        stroke="none"
+                        stroke-width="1"
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <g
+                          transform="translate(-511.000000, -20.000000)"
+                          fill="#000000"
+                        >
+                          <g>
+                            <path
+                              d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"
+                            ></path>
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                  <div style="padding-top: 8px">
+                    <div
+                      style="
+                        color: #3897f0;
+                        font-family: Arial, sans-serif;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 550;
+                        line-height: 18px;
+                      "
+                    >
+                      Lihat postingan ini di Instagram
+                    </div>
+                  </div>
+                  <div style="padding: 12.5% 0"></div>
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: row;
+                      margin-bottom: 14px;
+                      align-items: center;
+                    "
+                  >
+                    <div>
+                      <div
+                        style="
+                          background-color: #f4f4f4;
+                          border-radius: 50%;
+                          height: 12.5px;
+                          width: 12.5px;
+                          transform: translateX(0px) translateY(7px);
+                        "
+                      ></div>
+                      <div
+                        style="
+                          background-color: #f4f4f4;
+                          height: 12.5px;
+                          transform: rotate(-45deg) translateX(3px)
+                            translateY(1px);
+                          width: 12.5px;
+                          flex-grow: 0;
+                          margin-right: 14px;
+                          margin-left: 2px;
+                        "
+                      ></div>
+                      <div
+                        style="
+                          background-color: #f4f4f4;
+                          border-radius: 50%;
+                          height: 12.5px;
+                          width: 12.5px;
+                          transform: translateX(9px) translateY(-18px);
+                        "
+                      ></div>
+                    </div>
+                    <div style="margin-left: 8px">
+                      <div
+                        style="
+                          background-color: #f4f4f4;
+                          border-radius: 50%;
+                          flex-grow: 0;
+                          height: 20px;
+                          width: 20px;
+                        "
+                      ></div>
+                      <div
+                        style="
+                          width: 0;
+                          height: 0;
+                          border-top: 2px solid transparent;
+                          border-left: 6px solid #f4f4f4;
+                          border-bottom: 2px solid transparent;
+                          transform: translateX(16px) translateY(-4px)
+                            rotate(30deg);
+                        "
+                      ></div>
+                    </div>
+                    <div style="margin-left: auto">
+                      <div
+                        style="
+                          width: 0px;
+                          border-top: 8px solid #f4f4f4;
+                          border-right: 8px solid transparent;
+                          transform: translateY(16px);
+                        "
+                      ></div>
+                      <div
+                        style="
+                          background-color: #f4f4f4;
+                          flex-grow: 0;
+                          height: 12px;
+                          width: 16px;
+                          transform: translateY(-4px);
+                        "
+                      ></div>
+                      <div
+                        style="
+                          width: 0;
+                          height: 0;
+                          border-top: 8px solid #f4f4f4;
+                          border-left: 8px solid transparent;
+                          transform: translateY(-4px) translateX(8px);
+                        "
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: column;
+                      flex-grow: 1;
+                      justify-content: center;
+                      margin-bottom: 24px;
+                    "
+                  >
+                    <div
+                      style="
+                        background-color: #f4f4f4;
+                        border-radius: 4px;
+                        flex-grow: 0;
+                        height: 14px;
+                        margin-bottom: 6px;
+                        width: 224px;
+                      "
+                    ></div>
+                    <div
+                      style="
+                        background-color: #f4f4f4;
+                        border-radius: 4px;
+                        flex-grow: 0;
+                        height: 14px;
+                        width: 144px;
+                      "
+                    ></div></div
+                ></a>
+                <p
+                  style="
+                    color: #c9c8cd;
+                    font-family: Arial, sans-serif;
+                    font-size: 14px;
+                    line-height: 17px;
+                    margin-bottom: 0;
+                    margin-top: 8px;
+                    overflow: hidden;
+                    padding: 8px 0 7px;
+                    text-align: center;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                  "
+                >
+                  <a
+                    href="https://www.instagram.com/reel/C78jxz1xzVr/?utm_source=ig_embed&amp;utm_campaign=loading"
+                    style="
+                      color: #c9c8cd;
+                      font-family: Arial, sans-serif;
+                      font-size: 14px;
+                      font-style: normal;
+                      font-weight: normal;
+                      line-height: 17px;
+                      text-decoration: none;
+                    "
+                    target="_blank"
+                    >Sebuah kiriman dibagikan oleh Website l Technology l
+                    Framework (@diwebin.id)</a
+                  >
+                </p>
+              </div>
+            </blockquote>
+            <script async src="//www.instagram.com/embed.js"></script>
+            <blockquote
+              class="instagram-media"
+              data-instgrm-captioned
+              data-instgrm-permalink="https://www.instagram.com/reel/C8JpRQpxOMO/?utm_source=ig_embed&amp;utm_campaign=loading"
+              data-instgrm-version="14"
+            >
+              <div style="padding: 16px">
+                <a
+                  href="https://www.instagram.com/reel/C8JpRQpxOMO/?utm_source=ig_embed&amp;utm_campaign=loading"
+                  style="
+                    background: #ffffff;
+                    line-height: 0;
+                    padding: 0 0;
+                    text-align: center;
+                    text-decoration: none;
+                    width: 100%;
+                  "
+                  target="_blank"
+                >
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: row;
+                      align-items: center;
+                    "
+                  >
+                    <div
+                      style="
+                        background-color: #f4f4f4;
+                        border-radius: 50%;
+                        flex-grow: 0;
+                        height: 40px;
+                        margin-right: 14px;
+                        width: 40px;
+                      "
+                    ></div>
+                    <div
+                      style="
+                        display: flex;
+                        flex-direction: column;
+                        flex-grow: 1;
+                        justify-content: center;
+                      "
+                    >
+                      <div
+                        style="
+                          background-color: #f4f4f4;
+                          border-radius: 4px;
+                          flex-grow: 0;
+                          height: 14px;
+                          margin-bottom: 6px;
+                          width: 100px;
+                        "
+                      ></div>
+                      <div
+                        style="
+                          background-color: #f4f4f4;
+                          border-radius: 4px;
+                          flex-grow: 0;
+                          height: 14px;
+                          width: 60px;
+                        "
+                      ></div>
+                    </div>
+                  </div>
+                  <div style="padding: 19% 0"></div>
+                  <div
+                    style="
+                      display: block;
+                      height: 50px;
+                      margin: 0 auto 12px;
+                      width: 50px;
+                    "
+                  >
+                    <svg
+                      width="50px"
+                      height="50px"
+                      viewBox="0 0 60 60"
+                      version="1.1"
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlns:xlink="https://www.w3.org/1999/xlink"
+                    >
+                      <g
+                        stroke="none"
+                        stroke-width="1"
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <g
+                          transform="translate(-511.000000, -20.000000)"
+                          fill="#000000"
+                        >
+                          <g>
+                            <path
+                              d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"
+                            ></path>
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                  <div style="padding-top: 8px">
+                    <div
+                      style="
+                        color: #3897f0;
+                        font-family: Arial, sans-serif;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 550;
+                        line-height: 18px;
+                      "
+                    >
+                      Lihat postingan ini di Instagram
+                    </div>
+                  </div>
+                  <div style="padding: 12.5% 0"></div>
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: row;
+                      margin-bottom: 14px;
+                      align-items: center;
+                    "
+                  >
+                    <div>
+                      <div
+                        style="
+                          background-color: #f4f4f4;
+                          border-radius: 50%;
+                          height: 12.5px;
+                          width: 12.5px;
+                          transform: translateX(0px) translateY(7px);
+                        "
+                      ></div>
+                      <div
+                        style="
+                          background-color: #f4f4f4;
+                          height: 12.5px;
+                          transform: rotate(-45deg) translateX(3px)
+                            translateY(1px);
+                          width: 12.5px;
+                          flex-grow: 0;
+                          margin-right: 14px;
+                          margin-left: 2px;
+                        "
+                      ></div>
+                      <div
+                        style="
+                          background-color: #f4f4f4;
+                          border-radius: 50%;
+                          height: 12.5px;
+                          width: 12.5px;
+                          transform: translateX(9px) translateY(-18px);
+                        "
+                      ></div>
+                    </div>
+                    <div style="margin-left: 8px">
+                      <div
+                        style="
+                          background-color: #f4f4f4;
+                          border-radius: 50%;
+                          flex-grow: 0;
+                          height: 20px;
+                          width: 20px;
+                        "
+                      ></div>
+                      <div
+                        style="
+                          width: 0;
+                          height: 0;
+                          border-top: 2px solid transparent;
+                          border-left: 6px solid #f4f4f4;
+                          border-bottom: 2px solid transparent;
+                          transform: translateX(16px) translateY(-4px)
+                            rotate(30deg);
+                        "
+                      ></div>
+                    </div>
+                    <div style="margin-left: auto">
+                      <div
+                        style="
+                          width: 0px;
+                          border-top: 8px solid #f4f4f4;
+                          border-right: 8px solid transparent;
+                          transform: translateY(16px);
+                        "
+                      ></div>
+                      <div
+                        style="
+                          background-color: #f4f4f4;
+                          flex-grow: 0;
+                          height: 12px;
+                          width: 16px;
+                          transform: translateY(-4px);
+                        "
+                      ></div>
+                      <div
+                        style="
+                          width: 0;
+                          height: 0;
+                          border-top: 8px solid #f4f4f4;
+                          border-left: 8px solid transparent;
+                          transform: translateY(-4px) translateX(8px);
+                        "
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: column;
+                      flex-grow: 1;
+                      justify-content: center;
+                      margin-bottom: 24px;
+                    "
+                  >
+                    <div
+                      style="
+                        background-color: #f4f4f4;
+                        border-radius: 4px;
+                        flex-grow: 0;
+                        height: 14px;
+                        margin-bottom: 6px;
+                        width: 224px;
+                      "
+                    ></div>
+                    <div
+                      style="
+                        background-color: #f4f4f4;
+                        border-radius: 4px;
+                        flex-grow: 0;
+                        height: 14px;
+                        width: 144px;
+                      "
+                    ></div></div
+                ></a>
+                <p
+                  style="
+                    color: #c9c8cd;
+                    font-family: Arial, sans-serif;
+                    font-size: 14px;
+                    line-height: 17px;
+                    margin-bottom: 0;
+                    margin-top: 8px;
+                    overflow: hidden;
+                    padding: 8px 0 7px;
+                    text-align: center;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                  "
+                >
+                  <a
+                    href="https://www.instagram.com/reel/C8JpRQpxOMO/?utm_source=ig_embed&amp;utm_campaign=loading"
+                    style="
+                      color: #c9c8cd;
+                      font-family: Arial, sans-serif;
+                      font-size: 14px;
+                      font-style: normal;
+                      font-weight: normal;
+                      line-height: 17px;
+                      text-decoration: none;
+                    "
+                    target="_blank"
+                    >Sebuah kiriman dibagikan oleh Website l Technology l
+                    Framework (@diwebin.id)</a
+                  >
+                </p>
+              </div>
+            </blockquote>
+            <script async src="//www.instagram.com/embed.js"></script>
           </div>
         </div>
       </div>
@@ -547,29 +1168,50 @@
               <li>
                 <a
                   class="text-white roboto tracking-wide text-base font-thin pt-1"
+                  href="#beranda"
                 >
-                  Home
+                  Beranda
                 </a>
               </li>
               <li>
                 <a
                   class="text-white roboto tracking-wide text-base font-thin pt-1"
+                  href="#about"
                 >
-                  About
+                  Tentang Saya
                 </a>
               </li>
               <li>
                 <a
                   class="text-white roboto tracking-wide text-base font-thin pt-1"
+                  href="#slider-framework"
                 >
-                  Tools
+                  Framework & tools
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="text-white roboto tracking-wide text-base font-thin pt-1"
+                  href="#project"
+                >
+                  Proyek
                 </a>
               </li>
               <li>
                 <a
                   class="text-white roboto tracking-wide text-base font-thin pt-1"
+                  href="#bisnis"
                 >
-                  Portofolio
+                  Usaha
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-white roboto tracking-wide text-base font-thin pt-1"
+                  href="#footer"
+                >
+                  Kontak
                 </a>
               </li>
             </ul>
@@ -580,7 +1222,11 @@
             </h3>
             <ul>
               <li class="mt-2">
-                <a class="flex gap-3" href="">
+                <a
+                  class="flex gap-3"
+                  target="_blank"
+                  href="https://www.instagram.com/rilka_yt/?hl=id"
+                >
                   <img
                     src="./Assets/instagram-2016-5.svg"
                     alt=""
@@ -594,7 +1240,11 @@
                 </a>
               </li>
               <li class="mt-2">
-                <a class="flex gap-3" href="">
+                <a
+                  class="flex gap-3"
+                  target="_blank"
+                  href="https://www.youtube.com/channel/UCc0QQoWjmqmxPCk0UQHmW5g"
+                >
                   <img
                     src="./Assets/youtube-icon-5.svg"
                     alt=""
@@ -608,7 +1258,11 @@
                 </a>
               </li>
               <li class="mt-2">
-                <a class="flex gap-3" href="">
+                <a
+                  class="flex gap-3"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/rifki-ilham-lutfika-72b629229/"
+                >
                   <img
                     src="./Assets/linkedin-icon-2.svg"
                     alt=""
@@ -627,7 +1281,8 @@
         <div class="mt-10 w-full pt-10 border-t border-slate-700">
           <div class="flex items-center justify-center mb-5">
             <a
-              href=""
+              href="https://www.youtube.com/channel/UCc0QQoWjmqmxPCk0UQHmW5g"
+              target="_blank"
               class="w-9 h-9 mr-3 rounded-full grayscale flex items-center justify-center border border-slate-300 hover:text-white hover:grayscale-0 hover:duration-300 transition duration-300 ease-out"
               ><img
                 src="./Assets/youtube-icon-5.svg"
@@ -635,7 +1290,8 @@
                 class="w-5 h-5 fill-current"
             /></a>
             <a
-              href=""
+              href="https://github.com/Rilkayt"
+              target="_blank"
               class="w-9 h-9 mr-3 rounded-full grayscale flex items-center justify-center border border-slate-300 hover:text-white hover:bg-white hover:duration-300 transition duration-300 ease-out"
               ><img
                 src="./Assets/github-icon-1.svg"
@@ -643,7 +1299,8 @@
                 class="w-5 h-5 fill-current"
             /></a>
             <a
-              href=""
+              href="https://www.instagram.com/rilka_yt/?hl=id"
+              target="_blank"
               class="w-9 h-9 mr-3 rounded-full grayscale flex items-center justify-center border border-slate-300 hover:grayscale-0 hover:text-white hover:duration-300 transition duration-300 ease-out"
               ><img
                 src="./Assets/instagram-2016-5.svg"
@@ -651,7 +1308,8 @@
                 class="w-5 h-5 fill-current"
             /></a>
             <a
-              href=""
+              href="https://www.linkedin.com/in/rifki-ilham-lutfika-72b629229/"
+              target="_blank"
               class="w-9 h-9 mr-3 rounded-full grayscale flex items-center justify-center border border-slate-300 hover:grayscale-0 hover:text-white hover:duration-300 transition duration-300 ease-out"
               ><img
                 src="./Assets/linkedin-icon-2.svg"
@@ -659,7 +1317,7 @@
                 class="w-4 h-4 fill-current"
             /></a>
             <a
-              href=""
+              href="#"
               class="w-9 h-9 mr-3 rounded-full grayscale flex items-center justify-center border border-slate-300 hover:grayscale-0 hover:text-white hover:duration-300 transition duration-300 ease-out"
               ><img
                 src="./Assets/discord-6.svg"
@@ -672,136 +1330,42 @@
       </div>
     </section>
 
-    <!-- Contact -->
-
-    <!-- <section id="contact" class="py-28 bg-[#0F1015]">
-      <div class="container">
-        <h2>Contact Me</h2>
-
-         <div class="row justify-content-center">
-          <div class="col-md-5">
-            <div
-              class="alert alert-success alert-dismissible fade show d-none alert-nya"
-              role="alert"
-            >
-              <strong>Terkirim XD</strong> Terima kasih atas feedback nya ,
-              Pesan mu akan kami balas di email mu 😊👌
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="alert"
-                aria-label="Close"
-              ></button>
-            </div> 
-        <form name="contact-portofolio">
-          <div class="mb-3">
-            <label for="name" class="form-label">Nama</label>
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              aria-describedby="name"
-              maxlength="20"
-              placeholder="(max 20 characters)"
-              name="Nama"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="Email" class="form-label">Email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="Email"
-              placeholder="example@gmail.com"
-              name="Email"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="textarea" class="form-label">Your Opinion</label>
-            <textarea
-              class="form-control"
-              id="textarea"
-              rows="6"
-              maxlength="500"
-              placeholder="max 500 characters"
-              name="Pesan"
-              required
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            class="btn btn-kirim"
-            style="background-color: #829e9e"
-          >
-            Kamu Nanya?
-          </button>
-          <button
-            class="btn btn-loading d-none"
-            style="background-color: #829e9e8f"
-            type="button"
-            disabled
-          >
-            <span
-              class="spinner-grow spinner-grow-sm"
-              role="status"
-              aria-hidden="true"
-            ></span>
-            Loading...
-          </button>
-        </form>
-      </div>
-    </section> -->
-
-    <!-- Footer -->
-
-    <!-- <section class="footer">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 text-center">
-            <h6><i class="fa-solid fa-copyright"></i>2022</h6>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    End Footer -->
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script> -->
-
     <script>
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbyfy7piqUDSHj3FksyMSdW3pzcDZ4801fFWgPoUSkHI_JXlE_ntfLSIP0Zqyq1cTuLx/exec";
-      const form = document.forms["contact-portofolio"];
+      let btnMenu = document.getElementById("menuBar");
+      let overlaySide = document.getElementById("overlay-side");
 
-      var kirim = document.querySelector(".btn-kirim");
-      var loading = document.querySelector(".btn-loading");
-      var sukses = document.querySelector(".alert-nya");
+      let condition = false;
+      function action() {
+        btnMenu.classList.remove("-right-64");
+        btnMenu.classList.add("right-0");
+        btnMenu.classList.add("duration-500");
+        document.body.classList.add("overflow-hidden");
+        overlaySide.classList.remove("hidden");
+      }
 
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        // tombol 'kamu nanya' di klik
-        // loding nya muncul , 'kamu nanya' hilang
-        loading.classList.toggle("d-none");
-        kirim.classList.toggle("d-none");
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            // tombol 'kamu nanya muncul'
-            // loading hilng
-            loading.classList.toggle("d-none");
-            kirim.classList.toggle("d-none");
-            // alert muncul
-            sukses.classList.toggle("d-none");
-            // riset tampilan
-            form.reset();
-            console.log("Success!", response);
-          })
-          .catch((error) => console.error("Error!", error.message));
-      });
+      function tutup() {
+        btnMenu.classList.remove("right-0");
+        btnMenu.classList.add("-right-64");
+        document.body.classList.remove("overflow-hidden");
+        overlaySide.classList.add("hidden");
+      }
+
+      window.onscroll = () => {
+        const nav = document.querySelector("nav");
+        const fixedNav = nav.offsetTop;
+
+        if (fixedNav >= 5) {
+          nav.classList.add("backdrop-blur-sm");
+          nav.classList.add("duration-300");
+          nav.classList.add("shadow-sm");
+          nav.classList.add("shadow-white");
+        } else {
+          nav.classList.remove("backdrop-blur-sm");
+          nav.classList.add("duration-300");
+          nav.classList.remove("shadow-sm");
+          nav.classList.remove("shadow-white");
+        }
+      };
     </script>
   </body>
 </html>
